@@ -1,7 +1,7 @@
 # Copyright (c) Jupyter Development Team.
 # Distributed under the terms of the Modified BSD License.
 
-FROM jupyter/base-notebook
+FROM epinux/base-notebook
 
 MAINTAINER Jupyter Project <jupyter@googlegroups.com>
 
@@ -28,4 +28,4 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     rm -rf /var/lib/apt/lists/*
 
 # Switch back to jovyan to avoid accidental container runs as root
-USER jovyan
+USER epinux

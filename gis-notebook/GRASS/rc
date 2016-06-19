@@ -1,0 +1,7 @@
+GISDBASE: /home/jovyan/work/grassdata
+LOCATION_NAME: project
+GRASS_VERBOSE: '-1'
+GUI: text
+DEBUG: 0
+MAPSET: PERMANENT
+GISBASE: /usr/local/grass-7.3.svn
