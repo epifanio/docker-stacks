@@ -65,7 +65,7 @@ RUN apt-get update && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 	
-RUN pip install --default-timeout=100 bookeh && pip3 install --default-timeout=100 bookeh
+RUN pip install --default-timeout=100 bokeh && pip3 install --default-timeout=100 bokeh
 
 # Install Python 2 kernel spec globally to avoid permission problems when NB_UID
 # switching at runtime.
