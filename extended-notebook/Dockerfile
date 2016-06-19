@@ -32,6 +32,9 @@ RUN git clone https://github.com/ipython-contrib/IPython-notebook-extensions && 
 RUN git clone https://github.com/jdfreder/iforth && cd iforth && python3 setup.py install && python setup.py install && \
     cd ../ && rm -rf iforth
 
+RUN pip install pythreejs && pip3 install pythreejs
+RUN jupyter nbextension enable --py pythreejs --sys-prefix
+
 USER epinux
 
 RUN echo "alias python=python3" >> /home/epinux/.bashrc
