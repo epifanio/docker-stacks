@@ -35,6 +35,9 @@ RUN git clone https://github.com/jdfreder/iforth && cd iforth && python3 setup.p
 RUN pip install pythreejs && pip3 install pythreejs
 RUN jupyter nbextension enable --py pythreejs --sys-prefix
 
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends gnuplot
+
 USER epinux
 
 RUN echo "alias python=python3" >> /home/epinux/.bashrc
