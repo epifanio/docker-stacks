@@ -23,8 +23,7 @@ RUN pip3 install --default-timeout=100 scikit-learn \
     bqplot
 
 # vispy
-RUN git clone https://github.com/vispy/vispy.git && cd vispy && python setup.py install
-RUN git clone https://github.com/vispy/vispy.git && cd vispy && python3 setup.py install
+RUN git clone https://github.com/vispy/vispy.git && cd vispy && python setup.py install && python3 setup.py install && cd .. && rm -rf vispy
 
 # Install Python 2 packages
 RUN apt-get install -y --no-install-recommends \
