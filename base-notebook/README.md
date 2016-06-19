@@ -2,6 +2,14 @@
 
 # Base Jupyter Notebook Stack
 
+## This fork differs from the original repository [jupyter/docker-stacks](https://github.com/jupyter/docker-stacks) for:
+* upgrade the OS to debian SID
+* replace the conda python/R environment with the system python (2/3) and R
+* Additional kernels (C, Octave, Bash)
+* Additional noteb ook js extensions
+* Additional software libraries for geospatial data analysys (GDAL, GRASS, OSIM, PostGIS) and other geo-oriented python and R librries
+
+
 Small base image for defining your own stack
 
 ## What it Gives You
