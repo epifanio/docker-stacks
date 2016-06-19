@@ -18,7 +18,13 @@ RUN pip3 install --default-timeout=100 scikit-learn \
     sympy \
     statsmodels \
     cloudpickle \
-    dill
+    dill \
+    qrcode \
+    bqplot
+
+# vispy
+RUN git clone https://github.com/vispy/vispy.git && cd vispy && python setup.py install
+RUN git clone https://github.com/vispy/vispy.git && cd vispy && python3 setup.py install
 
 # Install Python 2 packages
 RUN apt-get install -y --no-install-recommends \
@@ -32,9 +38,12 @@ RUN pip install --default-timeout=100 ipython \
     sympy \
     statsmodels \
     cloudpickle \
-    dill
+    dill \
+    qrcode \
+    bqplot
 
 RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix
+RUN jupyter nbextension enable --py bqplot
 
 # extra lib
 
@@ -57,7 +66,8 @@ RUN apt-get update && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 	
-	
+#bookeh
+
 # Install Python 2 kernel spec globally to avoid permission problems when NB_UID
 # switching at runtime.
 RUN /usr/bin/python -m ipykernel install
