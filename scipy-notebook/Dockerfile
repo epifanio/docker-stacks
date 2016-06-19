@@ -12,7 +12,7 @@ RUN apt-get update && \
     dvipng ghostscript python3-matplotlib python3-pandas \
     python3-seaborn cython3 \
     python3-patsy python3-h5py python3-numexpr python3-skimage-lib \
-    libyaml-dev python3-setuptools python-setuptools
+    libyaml-dev python3-setuptools python-setuptools npm
 
 RUN pip3 install --default-timeout=100 scikit-learn \
     sympy \
@@ -43,7 +43,7 @@ RUN pip install --default-timeout=100 ipython \
     bqplot
 
 RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix
-RUN jupyter nbextension enable --py bqplot
+RUN jupyter nbextension enable --py bqplot --sys-prefix
 
 # extra lib
 
