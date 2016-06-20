@@ -7,11 +7,12 @@ OWNER:=jupyter
 # need to list these manually because there's a dependency tree
 ALL_STACKS:=base-notebook \
 	minimal-notebook \
-	r-notebook \
 	scipy-notebook \
-	datascience-notebook \
-	pyspark-notebook \
-	all-spark-notebook
+	r-notebook \
+	julia-notebook \
+	extended-notebook \
+	db-notebook \
+	gis-notebook
 
 ALL_IMAGES:=$(ALL_STACKS)
 
@@ -19,7 +20,7 @@ GIT_MASTER_HEAD_SHA:=$(shell git rev-parse --short=12 --verify HEAD)
 
 help:
 # http://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
-	@echo "jupyter/docker-stacks"
+	@echo "epinux/docker-stacks"
 	@echo "====================="
 	@echo "Replace % with a stack directory name (e.g., make build/minimal-notebook)\n"
 	@grep -E '^[a-zA-Z0-9_%/-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
