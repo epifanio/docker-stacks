@@ -44,6 +44,7 @@ RUN apt-get -y update && \
 
 # Install Python 3 packages
 RUN pip3 install jq
+RUN pip install jq
 
 # Set PYSPARK_HOME in the python2 spec
 RUN jq --arg v "/usr/bin/python" \
