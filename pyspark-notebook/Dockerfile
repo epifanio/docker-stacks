@@ -9,7 +9,7 @@ USER root
 # Spark dependencies
 ENV APACHE_SPARK_VERSION 2.0.0
 RUN apt-get -y update && \
-    apt-get install -y --no-install-recommends openjdk-7-jre-headless && \
+    apt-get install -y --no-install-recommends openjdk-8-jre-headless && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 RUN cd /tmp && \
