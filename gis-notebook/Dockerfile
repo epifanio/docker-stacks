@@ -58,14 +58,25 @@ RUN apt-get update && \
     python3-grib
 
 
-xray
-pygeoif
-pyepsg
+RUN pip3 install xray \
+    pygeoif \
+    pyepsg \
+    geocoder \
+    pygeoif \
+    czml
+
+RUN pip2 install xray \
+    pygeoif \
+    pyepsg \
+    geocoder \
+    pygeoif \
+    czml
 
 
+RUN pip install ipyleaflet && pip3 install ipyleaflet
+RUN jupyter nbextension enable --py ipyleaflet
 
-
-
+RUN pip3 install -U pyproj && pip install -U pyproj
 
 
 
@@ -83,11 +94,6 @@ ENV LD_LIBRARY_PATH /usr/lib/grass70/lib/
 
 RUN mkdir /home/epinux/.grass7
 ADD GRASS/rc /home/epinux/.grass7/rc
-
-RUN pip install ipyleaflet && pip3 install ipyleaflet
-RUN jupyter nbextension enable --py ipyleaflet
-
-RUN pip3 install -U pyproj && pip install -U pyproj
 
 RUN wget http://epinux.com/grassdata.zip && \
 unzip grassdata.zip && \
