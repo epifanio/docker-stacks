@@ -3,7 +3,7 @@
 
 .PHONY: build-all help environment-check release-all
 
-OWNER:=jupyter
+OWNER:=epinux
 # need to list these manually because there's a dependency tree
 ALL_STACKS:=base-notebook \
 	minimal-notebook \
