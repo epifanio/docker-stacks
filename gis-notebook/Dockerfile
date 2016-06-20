@@ -58,19 +58,19 @@ RUN apt-get update && \
     python3-grib
 
 
-RUN pip3 install xray \
-    pygeoif \
-    pyepsg \
-    geocoder \
-    pygeoif \
-    czml
+RUN pip3 install xray && \
+    pip3 install pygeoif &&\
+    pip3 install pyepsg && \
+    pip3 install geocoder && \
+    pip3 install pygeoif && \
+    pip3 install czml
 
-RUN pip2 install xray \
-    pygeoif \
-    pyepsg \
-    geocoder \
-    pygeoif \
-    czml
+RUN pip2 install xray && \
+    pip2 install pygeoif &&\
+    pip2 install pyepsg && \
+    pip2 install geocoder && \
+    pip2 install pygeoif && \
+    pip2 install czml
 
 
 RUN pip install ipyleaflet && pip3 install ipyleaflet
