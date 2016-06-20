@@ -1,6 +1,6 @@
 # Copyright (c) Jupyter Development Team.
 # Distributed under the terms of the Modified BSD License.
-FROM jupyter/minimal-notebook
+FROM epinux/db-notebook
 
 MAINTAINER Jupyter Project <jupyter@googlegroups.com>
 
@@ -9,7 +9,7 @@ USER root
 # Spark dependencies
 ENV APACHE_SPARK_VERSION 2.0.0
 RUN apt-get -y update && \
-    apt-get install -y --no-install-recommends openjdk-7-jre-headless jq && \
+    apt-get install -y --no-install-recommends openjdk-8-jre-headless jq && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 RUN cd /tmp && \
