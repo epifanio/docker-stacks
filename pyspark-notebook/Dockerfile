@@ -43,8 +43,7 @@ RUN apt-get -y update && \
     apt-get install -y --no-install-recommends dh-autoreconf
 
 # Install Python 3 packages
-RUN pip3 install jq
-RUN pip install jq
+RUN pip3 install jq && pip install jq
 
 # Set PYSPARK_HOME in the python2 spec
 RUN jq --arg v "/usr/bin/python" \

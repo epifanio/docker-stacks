@@ -10,7 +10,7 @@ Opinionated stacks of ready-to-run Jupyter applications in Docker.
 If you're familiar with Docker, have it configured, and know exactly what you'd like to run, this one-liner should work in most cases:
 
 ```
-docker run -d -P jupyter/<your desired stack>
+docker run -d -P epinux/<your desired stack>
 ```
 
 ## Getting Started
@@ -23,15 +23,24 @@ If this is your first time using Docker or any of the Jupyter projects, do the f
 
 ## A visual overview of stacks
 
-Here's a diagram of the `FROM` relationships between all of the images defined in this project:
+In this fork of the [jupyter/docker-stacks]() the following docker images are built in a hierarchical sequence: 
 
-[![Image inheritance diagram](internal/inherit-diagram.png)](http://interactive.blockdiag.com/?compression=deflate&src=eJyFzLEOwjAMRdGdr7C6d0dURXRjZ0QIOY2LTNM4SsxQEP9Ow5YuXe87tnHSj5bxAZ8dgEQmr6gsHloIEjUia7MslgZ8Ob0P4jXxm5Z5n3sHV4eGXFtZMoz-8KSUmE6Xc1fdmt1f1EcwmKj2omRExnxXhCwm9jyhK9C6ZZd6DnOhypKNRcWlku9p81_cFGFOAeNYuHXLDp2r1_L7A-hzeKU)
+* [base-notebook]()
+* [minimal-notebook]()
+* [scipy-notebook]()
+* [r-notebook]()
+* [julia-notebook]()
+* [extended-notebook]()
+* [db-notebook]()
+* [gis-notebook]()
+
+Those images are based on debian SID and make use of the system python (2+3) and R
 
 ## Stacks, Tags, Versioning, and Progress
 
 Starting with [git commit SHA 9bd33dcc8688](https://github.com/jupyter/docker-stacks/tree/9bd33dcc8688):
 
-* Every folder here on GitHub has an equivalent `jupyter/<stack name>` on Docker Hub.
+* Every folder here on GitHub has an equivalent `epinux/<stack name>` on Docker Hub.
 * The `latest` tag in each Docker Hub repository tracks the `master` branch `HEAD` reference on GitHub.
 * Any 12-character image tag on Docker Hub refers to a git commit SHA here on GitHub. See the [Docker build history wiki page](https://github.com/jupyter/docker-stacks/wiki/Docker-build-history) for a table of build details.
 * Stack contents (e.g., new library versions) will be updated upon request via PRs against this project.
