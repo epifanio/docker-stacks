@@ -63,18 +63,20 @@ RUN pip3 install xray && \
     pip3 install pyepsg && \
     pip3 install geocoder && \
     pip3 install pygeoif && \
-    pip3 install czml
+    pip3 install czml && \
+    pip3 install cesiumpy
 
 RUN pip2 install xray && \
     pip2 install pygeoif &&\
     pip2 install pyepsg && \
     pip2 install geocoder && \
     pip2 install pygeoif && \
-    pip2 install czml
+    pip2 install czml && \
+    pip2 install cesiumpy
 
 
 RUN pip install ipyleaflet && pip3 install ipyleaflet
-RUN jupyter nbextension enable --py ipyleaflet
+RUN jupyter nbextension enable --py ipyleaflet --sys-prefix
 
 RUN pip3 install -U pyproj && pip install -U pyproj
 
