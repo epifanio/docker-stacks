@@ -23,7 +23,10 @@ RUN apt-get update && \
     shapelib \
     gpx2shp \
     gpsbabel \
-    ossim-core
+    ossim-core \
+    geographiclib-tools \
+    python3-geographiclib \
+    python-geographiclib
 
 
 # script for xvfb-run.  all docker commands will effectively run under this via the entrypoint
