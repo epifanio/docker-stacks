@@ -25,7 +25,7 @@ RUN pip3 install geoalchemy2 && pip install geoalchemy2
 
 USER postgres
 
-# start db and make new user and db (osgeo) listening from all host
+# start db and make new user and db (epinux) listening from all host
 RUN /etc/init.d/postgresql start &&\
     psql --command "CREATE USER epinux WITH SUPERUSER PASSWORD 'epinux';" &&\
     createdb -O epinux epinux && psql epinux -c 'create extension postgis;' &&\
