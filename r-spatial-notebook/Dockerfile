@@ -13,4 +13,8 @@ RUN sh /tmp/install_rstudio-server.sh
 ADD installR-Spatial.r /tmp/installR-Spatial.r
 RUN Rscript /tmp/installR-Spatial.r
 
+# R-studio-server
+
+EXPOSE 8787
+
 USER epinux
