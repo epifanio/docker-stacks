@@ -93,7 +93,7 @@ ENV GRASS_PNG_COMPRESSION 9
 ENV GRASS_TRANSPARENT TRUE
 ENV GRASS_TRUECOLOR TRUE
 ENV GISBASE /usr/lib/grass70
-ENV GISDBASE /home/epinux/work/grassdata
+ENV GISDBASE /home/epinux/grassdata
 ENV GISRC /home/epinux/.grass7/rc
 ENV LD_LIBRARY_PATH /usr/lib/grass70/lib/
 
@@ -102,7 +102,7 @@ ADD GRASS/rc /home/epinux/.grass7/rc
 
 RUN wget http://epinux.com/grassdata.zip && \
 unzip grassdata.zip && \
-rm -rf grassdata.zip
+rm -rf grassdata.zip && mv grassdata ../
 
 
 USER root
