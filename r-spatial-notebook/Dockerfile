@@ -23,7 +23,7 @@ RUN apt-get install libssl1.0.0
 
 RUN apt-get -y --purge remove libgdal-dev && apt-get -y autoremove
 
-ADD installR-Spatial.r /tmp/install-rgrass7.r
+ADD install-rgrass7.r /tmp/install-rgrass7.r
 RUN Rscript /tmp/install-rgrass7.r
 
 EXPOSE 8787
