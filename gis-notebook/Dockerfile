@@ -83,7 +83,8 @@ RUN jupyter nbextension enable --py ipyleaflet --sys-prefix
 
 RUN pip3 install -U pyproj && pip install -U pyproj
 
-
+RUN apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 USER epinux
 

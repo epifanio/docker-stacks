@@ -72,4 +72,7 @@ RUN pip install --default-timeout=100 bokeh && pip3 install --default-timeout=10
 RUN /usr/bin/python -m ipykernel install
 RUN /usr/bin/python3 -m ipykernel install
 
+RUN apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
 USER epinux

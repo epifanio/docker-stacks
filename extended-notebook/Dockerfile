@@ -40,6 +40,9 @@ RUN jupyter nbextension enable --py pythreejs --sys-prefix
 RUN apt-get update && \
     apt-get install -y --no-install-recommends gnuplot
 
+RUN apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
 USER epinux
 
 RUN echo "alias python=python3" >> /home/epinux/.bashrc

@@ -7,8 +7,7 @@ USER root
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     julia \
-    libnettle* && apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    libnettle*
 
 # Install IJulia packages as epinux and then move the kernelspec out
 # to the system share location. Avoids problems with runtime UID change not
@@ -24,5 +23,8 @@ USER root
 RUN mv /home/$NB_USER/.local/share/jupyter/kernels/* /usr/local/share/jupyter/kernels/ && \
     chmod -R go+rx /usr/local/share/jupyter # && \
     # rm -rf /home/$NB_USER/.local/share
+
+RUN apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 USER epinux

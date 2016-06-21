@@ -90,4 +90,7 @@ RUN echo "root:root" | chpasswd
 RUN echo "epinux:epinux" | chpasswd
 RUN echo "epinux     ALL=(ALL:ALL) ALL" >> /etc/sudoers
 
+RUN apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
 USER epinux

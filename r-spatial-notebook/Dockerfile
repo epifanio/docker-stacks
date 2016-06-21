@@ -26,6 +26,9 @@ RUN apt-get -y --purge remove libgdal-dev && apt-get -y autoremove
 ADD install-rgrass7.r /tmp/install-rgrass7.r
 RUN Rscript /tmp/install-rgrass7.r
 
+RUN apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
 EXPOSE 8787
 
 USER epinux
