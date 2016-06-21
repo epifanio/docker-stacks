@@ -20,7 +20,7 @@ RUN apt-get install -y aptitude -o APT::Force-LoopBreak=1
 RUN aptitude safe-upgrade -y
 #RUN apt-get -o APT::Force-LoopBreak=1 dist-upgrade -y
 
-RUN apt-get update && apt-get install -yq --no-install-recommends \
+RUN apt-get update && apt-get install -yq --no-install-recommends apt-utils \
     wget \
     bzip2 \
     python3 \
