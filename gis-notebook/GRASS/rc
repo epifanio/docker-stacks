@@ -1,4 +1,4 @@
-GISDBASE: /home/epinux/work/grassdata
+GISDBASE: /home/epinux/grassdata
 LOCATION_NAME: project
 GRASS_VERBOSE: '-1'
 GUI: text
