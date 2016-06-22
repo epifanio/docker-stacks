@@ -84,7 +84,7 @@ RUN jupyter nbextension enable --py ipyleaflet --sys-prefix
 RUN pip3 install -U pyproj && pip install -U pyproj
 
 RUN pip3 install geopy && pip install geopy
-RUN pip3 install git+https://github.com/rmenegaux/bayeshack
+RUN git clone https://github.com/rmenegaux/bayeshack
 
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/*
