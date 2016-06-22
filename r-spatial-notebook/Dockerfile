@@ -23,11 +23,13 @@ RUN apt-get install libssl1.0.0
 
 RUN apt-get -y --purge remove libgdal-dev && apt-get -y autoremove
 
-RUN chown -R epinux /home/epinux/
+
 RUN rm -rf /home/epinux/grassdata/project/PERMANENT/.gislock
+RUN chown -R root /home/epinux/grassdata/project
 
 ADD install-rgrass7.r /tmp/install-rgrass7.r
 RUN Rscript /tmp/install-rgrass7.r
+RUN chown -R epinux /home/epinux/
 
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/*
