@@ -1,6 +1,9 @@
 #install.packages(c('repr', 'IRkernel', 'IRdisplay'),
 #                 repos = c('http://irkernel.github.io/', 'http://cran.us.r-project.org'))
 #IRkernel::installspec()
+
+install.packages("devtools",repos = 'http://cran.us.r-project.org')
+
 library("devtools")
 
 install.packages(c('pbdZMQ', 'repr', 'devtools'))  # repr is already on CRAN
