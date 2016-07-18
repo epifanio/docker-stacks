@@ -43,6 +43,9 @@ RUN apt-get update && \
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+ADD install_extensions.sh /tmp/install_extensions.sh
+RUN /tmp/install_extensions.sh
+
 USER epinux
 
 RUN echo "alias python=python3" >> /home/epinux/.bashrc
