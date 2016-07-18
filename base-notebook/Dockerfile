@@ -32,7 +32,8 @@ RUN apt-get update && apt-get install -yq --no-install-recommends apt-utils \
     mlocate \
     libzmq3-dev \
     python3-zmq \
-    python3-setuptools
+    python3-setuptools \
+    openssh-server
 
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
     locale-gen
@@ -77,6 +78,8 @@ EXPOSE 8888
 WORKDIR /home/$NB_USER/work
 ENTRYPOINT ["tini", "--"]
 CMD ["start-notebook.sh"]
+
+EXPOSE 22
 
 # Add local files as late as possible to avoid cache busting
 COPY start-notebook.sh /usr/local/bin/
