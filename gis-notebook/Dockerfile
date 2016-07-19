@@ -14,7 +14,7 @@ RUN apt-get update && \
     dans-gdal-scripts \
     python-gdal \
     python3-gdal \
-    libgdal20-2.1.0-grass \
+    libgdal20-2.1.1-grass \
     librasterlite2-1 \
     libspatialite7 \
     spatialite-bin \
