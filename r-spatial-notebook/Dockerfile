@@ -19,7 +19,7 @@ RUN Rscript /tmp/installR-Spatial.r
 
 # R-studio-server
 RUN ln -s /usr/lib/x86_64-linux-gnu/libcrypto.so.1.0.2 /usr/lib/x86_64-linux-gnu/libcrypto.so.1.0.0
-RUN apt-get install libssl1.0.0
+RUN apt-get install -y libssl1*
 
 RUN apt-get -y --purge remove libgdal-dev && apt-get -y autoremove
 
