@@ -2,7 +2,7 @@
 # Distributed under the terms of the Modified BSD License.
 FROM epinux/scipy-notebook
 
-MAINTAINER Jupyter Project <jupyter@googlegroups.com>
+MAINTAINER Massimo Di Stefano  <epiesasha@me.com>
 
 USER root
 

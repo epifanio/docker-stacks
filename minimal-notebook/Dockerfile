@@ -3,7 +3,7 @@
 
 FROM epinux/base-notebook
 
-MAINTAINER Jupyter Project <jupyter@googlegroups.com>
+MAINTAINER Massimo Di Stefano  <epiesasha@me.com>
 
 USER root
 

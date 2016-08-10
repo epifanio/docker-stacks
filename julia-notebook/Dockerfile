@@ -2,6 +2,8 @@
 # Distributed under the terms of the Modified BSD License.
 FROM epinux/r-notebook
 
+MAINTAINER Massimo Di Stefano  <epiesasha@me.com>
+
 USER root
 
 RUN apt-get update && \

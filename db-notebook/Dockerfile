@@ -2,6 +2,8 @@
 # Distributed under the terms of the Modified BSD License.
 FROM epinux/extended-notebook
 
+MAINTAINER Massimo Di Stefano  <epiesasha@me.com>
+
 USER root
 
 RUN useradd -m -s /bin/bash postgres
