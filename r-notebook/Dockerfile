@@ -11,13 +11,10 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     fonts-dejavu \
     gfortran \
-    gcc
-
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
+    gcc \
     python3-rpy2 \
     build-essential gfortran libblas-dev liblapack-dev  \
-    netcdf-bin libzmq3-dev python-rpy2 r-recommended libreadline6-dev
+    netcdf-bin libzmq3-dev python-rpy2 r-recommended libreadline6-dev libcurl4-openssl-dev
 
 # Calls R script to do install with feedback to stdout
 

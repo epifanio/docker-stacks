@@ -4,7 +4,7 @@
 # Debian Jessie image released 2016 May 03.
 FROM debian@sha256:32a225e412babcd54c0ea777846183c61003d125278882873fb2bc97f9057c51
 
-MAINTAINER Jupyter Project <jupyter@googlegroups.com>
+MAINTAINER Massimo Di Stefano  <epiesasha@me.com>
 
 USER root
 
@@ -14,35 +14,8 @@ ADD sources.list /etc/apt/sources.list
 # features (e.g., download as all possible file formats)
 ENV DEBIAN_FRONTEND noninteractive
 
-
-RUN apt-get update
-RUN apt-get install -y aptitude -o APT::Force-LoopBreak=1
-RUN aptitude safe-upgrade -y
-#RUN apt-get -o APT::Force-LoopBreak=1 dist-upgrade -y
-
-RUN apt-get update && apt-get install -yq --no-install-recommends apt-utils \
-    wget \
-    bzip2 \
-    python3 \
-    python3-dev \
-    python3-pip \
-    ca-certificates \
-    sudo \
-    locales \
-    mlocate \
-    libzmq3-dev \
-    python3-zmq \
-    python3-setuptools \
-    openssh-server
-
-RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
-    locale-gen
-
-# Install Tini
-RUN wget --quiet https://github.com/krallin/tini/releases/download/v0.9.0/tini && \
-    echo "faafbfb5b079303691a939a747d7f60591f2143164093727e870b289a44d9872 *tini" | sha256sum -c - && \
-    mv tini /usr/local/bin/tini && \
-    chmod +x /usr/local/bin/tini
+ADD scripts/system_upgrade.sh /tmp/system_upgrade.sh
+RUN chmod ugo+rx /tmp/system_upgrade.sh; sync; /tmp/system_upgrade.sh
 
 # Configure environment
 ENV SHELL /bin/bash
@@ -69,9 +42,8 @@ RUN mkdir /home/$NB_USER/work && \
 USER root
 
 # Install JupyterHub to get the jupyterhub-singleuser startup script
-RUN pip3 install 'jupyter'
-RUN pip3 --default-timeout=100 install 'notebook'
-RUN pip3 install 'jupyterhub'
+ADD scripts/install_jupyter.sh /tmp/install_jupyter.sh
+RUN chmod ugo+rx /tmp/install_jupyter.sh; sync; /tmp/install_jupyter.sh
 
 # Configure container startup as root
 EXPOSE 8888
@@ -89,9 +61,8 @@ RUN chown -R $NB_USER:users /home/$NB_USER/.jupyter
 
 # Switch back to epinux to avoid accidental container runs as root
 
-RUN echo "root:root" | chpasswd
-RUN echo "epinux:epinux" | chpasswd
-RUN echo "epinux     ALL=(ALL:ALL) ALL" >> /etc/sudoers
+ADD scripts/set_passwd.sh /tmp/set_passwd.sh
+RUN chmod ugo+rx /tmp/set_passwd.sh; sync; /tmp/set_passwd.sh
 
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/*

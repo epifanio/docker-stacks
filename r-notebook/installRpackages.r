@@ -1,5 +1,7 @@
-install.packages(c('repr', 'IRkernel', 'IRdisplay'),
-                 repos = c('http://irkernel.github.io/', 'http://cran.us.r-project.org'))
+install.packages('httr', repos = 'http://cran.us.r-project.org')
+install.packages(c('repr', 'IRdisplay', 'pbdZMQ', 'httr', 'devtools'), repos = 'http://cran.us.r-project.org')
+devtools::install_github('IRkernel/IRkernel')
+
 IRkernel::installspec()
 
 #install.packages("devtools",repos = 'http://cran.us.r-project.org')

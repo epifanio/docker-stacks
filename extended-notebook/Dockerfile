@@ -6,22 +6,15 @@ USER root
 
 #RUN echo "alias python=python3" >> /root/.bashrc
 
-RUN pip3 install bash_kernel
-RUN python3 -m bash_kernel.install
-
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     ruby-dev rubygems gforth octave python3-yaml python-yaml \
-	python-psutil python3-psutil jq dh-autoreconf
+	python-psutil python3-psutil jq dh-autoreconf gnuplot
 	
 RUN gem install gist fpm
 
-RUN pip3 install octave_kernel
-RUN python3 -m octave_kernel.install
-RUN pip3 install ivisual
-
-RUN pip3 install jq && pip install jq
+RUN pip3 install bash_kernel && pip3 install ivisual && pip3 install octave_kernel && pip3 install jq && pip install jq
 
 RUN git clone https://github.com/brendan-rius/jupyter-c-kernel
 RUN cd jupyter-c-kernel && python3 setup.py install && \
@@ -35,16 +28,13 @@ RUN git clone https://github.com/jdfreder/iforth && cd iforth && python3 setup.p
     cd ../ && rm -rf iforth
 
 RUN pip install pythreejs && pip3 install pythreejs
-RUN jupyter nbextension enable --py pythreejs --sys-prefix
-
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends gnuplot
+RUN python3 -m bash_kernel.install && python3 -m octave_kernel.install && jupyter nbextension enable --py pythreejs --sys-prefix
 
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 ADD install_extensions.sh /tmp/install_extensions.sh
-RUN chmod a+x /tmp/install_extensions.sh && /tmp/install_extensions.sh
+RUN chmod ugo+rx /tmp/install_extensions.sh; sync; /tmp/install_extensions.sh
 
 USER epinux
 

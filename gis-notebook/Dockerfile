@@ -26,16 +26,7 @@ RUN apt-get update && \
     ossim-core \
     geographiclib-tools \
     python3-geographiclib \
-    python-geographiclib
-
-
-# script for xvfb-run.  all docker commands will effectively run under this via the entrypoint
-RUN printf "#\041/bin/sh \n rm -f /tmp/.X99-lock && xvfb-run -s '-screen 0 1600x1200x16' \$@" >> /usr/local/bin/xvfbrun.sh && \
-    chmod +x /usr/local/bin/xvfbrun.sh
-
-
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
+    python-geographiclib \
     fiona \
     python-fiona \
     python-rasterio \
@@ -45,10 +36,7 @@ RUN apt-get update && \
     python-owslib \
     python-geojson \
     python-netcdf4 \
-    python-grib
-
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
+    python-grib \
     python3-fiona \
     python3-rasterio \
     rasterio \
@@ -61,27 +49,29 @@ RUN apt-get update && \
     python3-grib
 
 
+# script for xvfb-run.  all docker commands will effectively run under this via the entrypoint
+RUN printf "#\041/bin/sh \n rm -f /tmp/.X99-lock && xvfb-run -s '-screen 0 1600x1200x16' \$@" >> /usr/local/bin/xvfbrun.sh && \
+    chmod +x /usr/local/bin/xvfbrun.sh
+
+
 RUN pip3 install xray && \
     pip3 install pygeoif &&\
     pip3 install pyepsg && \
     pip3 install geocoder && \
     pip3 install czml && \
-    pip3 install cesiumpy
-
-RUN pip2 install xray && \
+    pip3 install cesiumpy && \
+    pip2 install xray && \
     pip2 install pygeoif &&\
     pip2 install pyepsg && \
     pip2 install geocoder && \
     pip2 install czml && \
-    pip2 install cesiumpy
+    pip2 install cesiumpy && \
+    pip2 install ipyleaflet && pip3 install ipyleaflet && \
+    pip3 install -U pyproj && pip install -U pyproj && \
+    pip3 install geopy && pip install geopy
 
-
-RUN pip install ipyleaflet && pip3 install ipyleaflet
 RUN jupyter nbextension enable --py ipyleaflet --sys-prefix
 
-RUN pip3 install -U pyproj && pip install -U pyproj
-
-RUN pip3 install geopy && pip install geopy
 RUN git clone https://github.com/rmenegaux/bayeshack
 
 RUN apt-get clean && \
