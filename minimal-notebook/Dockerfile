@@ -23,9 +23,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     texlive-fonts-extra \
     texlive-fonts-recommended \
     texlive-generic-recommended \
-    libxrender1 \
-    && apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    libxrender1
 
 # Switch back to jovyan to avoid accidental container runs as root
 USER epinux

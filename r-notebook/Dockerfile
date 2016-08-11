@@ -22,7 +22,4 @@ RUN mkdir -p /usr/local/share/jupyter/kernels
 ADD installRpackages.r /tmp/installRpackages.r
 RUN Rscript /tmp/installRpackages.r
 
-RUN apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-
 USER epinux

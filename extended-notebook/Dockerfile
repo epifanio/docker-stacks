@@ -32,9 +32,6 @@ RUN git clone https://github.com/jdfreder/iforth && cd iforth && python3 setup.p
 RUN pip install pythreejs && pip3 install pythreejs
 RUN python3 -m bash_kernel.install && python3 -m octave_kernel.install && jupyter nbextension enable --py pythreejs --sys-prefix
 
-RUN apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-
 ADD install_extensions.sh /tmp/install_extensions.sh
 RUN chmod ugo+rx /tmp/install_extensions.sh; sync; /tmp/install_extensions.sh
 

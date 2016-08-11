@@ -28,9 +28,7 @@ RUN apt-get update && \
     python-sklearn-pandas \
     python-feather-format \
     python-sphinx \
-    python3-sphinx && \
-	apt-get clean && \
-	rm -rf /var/lib/apt/lists/*
+    python3-sphinx
 
 RUN pip3 install --default-timeout=100 scikit-learn \
     sympy \
@@ -66,7 +64,5 @@ RUN pip install --default-timeout=100 bokeh && pip3 install --default-timeout=10
 # switching at runtime.
 RUN /usr/bin/python -m ipykernel install; sync; /usr/bin/python3 -m ipykernel install
 
-RUN apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
 
 USER epinux

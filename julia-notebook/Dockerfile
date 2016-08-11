@@ -26,7 +26,4 @@ RUN mv /home/$NB_USER/.local/share/jupyter/kernels/* /usr/local/share/jupyter/ke
     chmod -R go+rx /usr/local/share/jupyter # && \
     # rm -rf /home/$NB_USER/.local/share
 
-RUN apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-
 USER epinux

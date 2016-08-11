@@ -74,9 +74,6 @@ RUN jupyter nbextension enable --py ipyleaflet --sys-prefix
 
 RUN git clone https://github.com/rmenegaux/bayeshack
 
-RUN apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-
 USER epinux
 
 ENV PATH /usr/lib/grass70/bin:$PATH
