@@ -28,7 +28,10 @@ RUN apt-get update && \
     python-sklearn-pandas \
     python-feather-format \
     python-sphinx \
-    python3-sphinx
+    python3-sphinx \
+    llvm-3.8 \
+    libedit-dev \
+    python3-tk
 
 RUN pip3 install --default-timeout=100 scikit-learn \
     sympy \
@@ -36,7 +39,23 @@ RUN pip3 install --default-timeout=100 scikit-learn \
     cloudpickle \
     dill \
     qrcode \
-    bqplot
+    bqplot \
+    dask \
+    partd \
+    distributed \
+    feather-format \
+    xarray \
+    datashape \
+    odo \
+    pillow \
+    ipympl \
+    castra
+
+
+RUN ln -s /usr/bin/llvm-config-3.8 /usr/bin/llvm-config
+
+ADD install_numba.sh /tmp/install_numba.sh
+RUN /tmp/install_numba.sh
 
 # vispy
 RUN git clone https://github.com/vispy/vispy.git && cd vispy && python setup.py install && python3 setup.py install && cd .. && rm -rf vispy

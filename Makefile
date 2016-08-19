@@ -12,9 +12,7 @@ ALL_STACKS:=base-notebook \
 	julia-notebook \
 	extended-notebook \
 	db-notebook \
-	gis-notebook \
-	r-spatial-notebook \
-	hpc-notebook
+	gis-notebook
 
 ALL_IMAGES:=$(ALL_STACKS)
 
