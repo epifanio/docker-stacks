@@ -8,11 +8,11 @@ OWNER:=epinux
 ALL_STACKS:=base-notebook \
 	minimal-notebook \
 	scipy-notebook \
-	r-notebook \
 	julia-notebook \
 	extended-notebook \
 	db-notebook \
-	gis-notebook
+	gis-notebook \
+	r-notebook
 
 ALL_IMAGES:=$(ALL_STACKS)
 
