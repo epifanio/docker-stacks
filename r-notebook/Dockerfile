@@ -1,6 +1,6 @@
 # Copyright (c) Jupyter Development Team.
 # Distributed under the terms of the Modified BSD License.
-FROM epinux/scipy-notebook
+FROM epinux/gis-notebook
 
 MAINTAINER Massimo Di Stefano  <epiesasha@me.com>
 
