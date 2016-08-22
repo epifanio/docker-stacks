@@ -9,7 +9,7 @@ USER root
 RUN useradd -m -s /bin/bash postgres
 RUN echo "postgres:postgres" | chpasswd
 
-RUN apt-get update && \
+RUN apt-get clean && apt-get update && \
     apt-get install -y --no-install-recommends \
 	postgresql-9.5 \
 	postgresql-client-9.5 \

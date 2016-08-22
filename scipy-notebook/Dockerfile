@@ -6,7 +6,7 @@ MAINTAINER Massimo Di Stefano  <epiesasha@me.com>
 
 USER root
 
-RUN apt-get update && \
+RUN apt-get clean && apt-get update && \
     apt-get install -y --no-install-recommends libav-tools \
     dvipng ghostscript python3-matplotlib python3-pandas \
     python3-seaborn cython3 \

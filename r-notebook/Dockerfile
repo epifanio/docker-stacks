@@ -7,7 +7,7 @@ MAINTAINER Massimo Di Stefano  <epiesasha@me.com>
 USER root
 
 # R pre-requisites
-RUN apt-get update && \
+RUN apt-get clean && apt-get update && \
     apt-get install -y --no-install-recommends \
     fonts-dejavu \
     gfortran \

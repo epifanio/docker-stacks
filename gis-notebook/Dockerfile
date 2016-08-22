@@ -4,7 +4,7 @@ MAINTAINER Massimo Di Stefano  <epiesasha@me.com>
 
 USER root
 
-RUN apt-get update && \
+RUN apt-get clean && apt-get update && \
     apt-get install -y --no-install-recommends \
     nano \
     netcdf-bin \

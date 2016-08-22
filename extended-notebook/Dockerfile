@@ -9,7 +9,7 @@ USER root
 #RUN echo "alias python=python3" >> /root/.bashrc
 
 
-RUN apt-get update && \
+RUN apt-get clean && apt-get update && \
     apt-get install -y --no-install-recommends \
     ruby-dev rubygems gforth octave python3-yaml python-yaml \
 	python-psutil python3-psutil jq dh-autoreconf gnuplot

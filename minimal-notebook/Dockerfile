@@ -8,7 +8,7 @@ MAINTAINER Massimo Di Stefano  <epiesasha@me.com>
 USER root
 
 # Install all OS dependencies for fully functional notebook server
-RUN apt-get update && apt-get install -yq --no-install-recommends \
+RUN apt-get clean && apt-get update && apt-get install -yq --no-install-recommends \
     git \
     vim \
     jed \
