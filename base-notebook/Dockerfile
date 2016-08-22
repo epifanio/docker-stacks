@@ -65,5 +65,6 @@ ADD scripts/set_passwd.sh /tmp/set_passwd.sh
 RUN chmod ugo+rx /tmp/set_passwd.sh; sync; /tmp/set_passwd.sh
 
 VOLUME /home/epinux/work/data
+RUN chmod -R 777 /home/epinux/work/data
 
 USER epinux

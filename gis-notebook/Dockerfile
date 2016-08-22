@@ -91,7 +91,7 @@ ADD GRASS/rc /home/epinux/.grass7/rc
 
 RUN wget http://epinux.com/grassdata.zip && \
 unzip grassdata.zip && \
-rm -rf grassdata.zip && mv grassdata ../
+rm -rf grassdata.zip && mv grassdata data/
 
 
 USER root

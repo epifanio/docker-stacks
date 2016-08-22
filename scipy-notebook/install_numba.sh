@@ -7,6 +7,8 @@ cd ..
 git clone https://github.com/numba/numba
 cd numba
 python3 setup.py install
-
+cd ../
+rm -rf numba
+rm -rf llvmlite
 
 

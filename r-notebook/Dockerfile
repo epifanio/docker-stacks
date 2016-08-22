@@ -45,6 +45,7 @@ RUN ln -s /usr/lib/x86_64-linux-gnu/libcrypto.so.1.0.2 /usr/lib/x86_64-linux-gnu
 #
 #ADD installR-Spatial.r /tmp/installR-Spatial.r
 #RUN Rscript /tmp/installR-Spatial.r
+# pkg built on 20th Aug. 2016
 
 RUN wget --progress=dot -P /tmp/ http://epinux.com/debs/R/rpackages_0.1.0_amd64.deb
 RUN dpkg -i /tmp/rpackages_0.1.0_amd64.deb
