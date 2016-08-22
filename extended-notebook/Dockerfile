@@ -35,7 +35,8 @@ RUN python3 -m bash_kernel.install && python3 -m octave_kernel.install && jupyte
 ADD install_extensions.sh /tmp/install_extensions.sh
 RUN chmod ugo+rx /tmp/install_extensions.sh; sync; /tmp/install_extensions.sh
 
-RUN pip3 install RISE
+RUN pip3 install RISE && \
+    pip install RISE
 RUN jupyter-nbextension install rise --py --sys-prefix
 RUN jupyter-nbextension enable rise --py --sys-prefix
 
