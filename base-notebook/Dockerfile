@@ -64,5 +64,6 @@ RUN chown -R $NB_USER:users /home/$NB_USER/.jupyter
 ADD scripts/set_passwd.sh /tmp/set_passwd.sh
 RUN chmod ugo+rx /tmp/set_passwd.sh; sync; /tmp/set_passwd.sh
 
+VOLUME /home/epinux/work/data
 
 USER epinux
