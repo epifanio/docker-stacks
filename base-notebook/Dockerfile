@@ -46,7 +46,7 @@ ADD scripts/install_jupyter.sh /tmp/install_jupyter.sh
 RUN chmod ugo+rx /tmp/install_jupyter.sh; sync; /tmp/install_jupyter.sh
 
 # Configure container startup as root
-EXPOSE 9999
+EXPOSE 8888
 WORKDIR /home/$NB_USER/work
 ENTRYPOINT ["tini", "--"]
 CMD ["start-notebook.sh"]

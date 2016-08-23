@@ -8,7 +8,7 @@ then
 fi
 
 exec jupyterhub-singleuser \
-  --port=9999 \
+  --port=8888 \
   --ip=0.0.0.0 \
   --user=$JPY_USER \
   --cookie-name=$JPY_COOKIE_NAME \
