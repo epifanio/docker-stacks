@@ -46,7 +46,8 @@ RUN apt-get clean && apt-get update && \
     python3-owslib \
     python3-geojson \
     python3-netcdf4 \
-    python3-grib
+    python3-grib \
+    proj-bin
 
 
 # script for xvfb-run.  all docker commands will effectively run under this via the entrypoint
