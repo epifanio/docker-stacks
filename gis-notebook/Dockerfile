@@ -89,12 +89,13 @@ ENV LD_LIBRARY_PATH /usr/lib/grass70/lib/
 RUN mkdir /home/epinux/.grass7
 ADD GRASS/rc /home/epinux/.grass7/rc
 
+
+USER root
+
 RUN wget http://epinux.com/grassdata.zip && \
 unzip grassdata.zip && \
 rm -rf grassdata.zip && mv grassdata data/
 
-
-USER root
 RUN chown -R epinux /home/epinux
 RUN updatedb
 
