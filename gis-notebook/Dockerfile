@@ -95,7 +95,7 @@ USER root
 
 RUN wget http://epinux.com/grassdata.zip && \
 unzip grassdata.zip && \
-rm -rf grassdata.zip && mv grassdata /home/epinux/work/
+rm -rf grassdata.zip 
 
 RUN chown -R epinux /home/epinux
 RUN updatedb
