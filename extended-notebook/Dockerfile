@@ -40,6 +40,9 @@ RUN pip3 install RISE && \
 RUN jupyter-nbextension install rise --py --sys-prefix
 RUN jupyter-nbextension enable rise --py --sys-prefix
 
+RUN pip3 install jupyterlab
+RUN jupyter serverextension enable --py jupyterlab --sys-prefix
+
 
 USER epinux
 
