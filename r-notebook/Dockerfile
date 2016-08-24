@@ -51,5 +51,7 @@ RUN wget --progress=dot -P /tmp/ http://epinux.com/debs/R/rpackages_0.1.0_amd64.
 RUN dpkg -i /tmp/rpackages_0.1.0_amd64.deb
 
 RUN rm -rf /tmp/*
+RUN chmod -R 777 /home/epinux/work/data
+RUN chown -r epinux /home/epinux/work/data
 
 USER epinux
