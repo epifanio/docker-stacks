@@ -27,3 +27,8 @@ RUN apt-get clean && apt-get update && \
 
 RUN wget --progress=dot -P /tmp/ http://epinux.com/debs/mb-system/mb-system_5.x.r2281-1_amd64.deb
 RUN dpkg -i /tmp/mb-system_5.x.r2281-1_amd64.deb
+
+RUN apt-get clean && apt-get update && \
+    apt-get install -y x11-apps
+
+ENV DISPLAY :0
