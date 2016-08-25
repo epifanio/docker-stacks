@@ -32,3 +32,12 @@ RUN apt-get clean && apt-get update && \
     apt-get install -y x11-apps x11vnc xvfb
 
 ENV DISPLAY :0
+ENV LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+
+RUN export uid=1000 gid=1000 && \
+    mkdir -p /home/epinux && \
+    echo "epinux:x:${uid}:${gid}:epinux,,,:/home/epinux:/bin/bash" >> /etc/passwd && \
+    echo "epinux:x:${uid}:" >> /etc/group && \
+    echo "epinux ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/epinux && \
+    chmod 0440 /etc/sudoers.d/epinux && \
+    chown ${uid}:${gid} -R /home/epinux
