@@ -34,3 +34,5 @@ RUN apt-get clean && apt-get update && \
 RUN mkdir ~/.vnc
 # Setup a password
 RUN x11vnc -storepasswd 1234 ~/.vnc/passwd
+
+EXPOSE 5900
