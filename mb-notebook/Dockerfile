@@ -26,16 +26,11 @@ RUN apt-get clean && apt-get update && \
     mesa-common-dev
 
 RUN wget --progress=dot -P /tmp/ http://epinux.com/debs/mb-system/mb-system_5.x.r2281-1_amd64.deb
+
 RUN dpkg -i /tmp/mb-system_5.x.r2281-1_amd64.deb
 
-RUN apt-get clean && apt-get update && \
-    apt-get install -y x11-apps x11vnc xvfb
-
-RUN mkdir ~/.vnc
-# Setup a password
-RUN x11vnc -storepasswd 1234 ~/.vnc/passwd
-ENV DISPLAY :0
 ENV LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
-CMD mbedit
 
-EXPOSE 5900
+
+RUN apt-get clean && apt-get update && \
+    apt-get install -y --no-install-recommends grass-gui qgis
