@@ -34,5 +34,8 @@ RUN apt-get clean && apt-get update && \
 RUN mkdir ~/.vnc
 # Setup a password
 RUN x11vnc -storepasswd 1234 ~/.vnc/passwd
+ENV DISPLAY :0
+ENV LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+CMD mbedit
 
 EXPOSE 5900
