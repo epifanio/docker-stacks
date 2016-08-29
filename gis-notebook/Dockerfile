@@ -47,7 +47,8 @@ RUN apt-get clean && apt-get update && \
     python3-geojson \
     python3-netcdf4 \
     python3-grib \
-    proj-bin
+    proj-bin \
+    python3-mpltoolkits.basemap
 
 
 # script for xvfb-run.  all docker commands will effectively run under this via the entrypoint
@@ -95,7 +96,7 @@ USER root
 
 RUN wget http://epinux.com/grassdata.zip && \
 unzip grassdata.zip && \
-rm -rf grassdata.zip 
+rm -rf grassdata.zip
 
 RUN chown -R epinux /home/epinux
 RUN updatedb

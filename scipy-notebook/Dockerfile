@@ -49,7 +49,10 @@ RUN pip3 install --default-timeout=100 scikit-learn \
     odo \
     pillow \
     ipympl \
-    castra
+    castra \
+    dora \
+    prettypandas \
+    arrow
 
 
 RUN ln -s /usr/bin/llvm-config-3.8 /usr/bin/llvm-config
