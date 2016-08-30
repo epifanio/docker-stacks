@@ -40,7 +40,7 @@ RUN mkdir -p /usr/local/share/jupyter/kernels
 ADD install_rstudio-server.sh /tmp/install_rstudio-server.sh
 RUN sh /tmp/install_rstudio-server.sh
 RUN ln -s /usr/lib/x86_64-linux-gnu/libcrypto.so.1.0.2 /usr/lib/x86_64-linux-gnu/libcrypto.so.1.0.0
-
+EXPOSE 8787
 #
 #ADD installR-Spatial.r /tmp/installR-Spatial.r
 #RUN Rscript /tmp/installR-Spatial.r
