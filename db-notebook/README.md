@@ -12,10 +12,10 @@
     * psycopg2
     * geoalchemy2
 	
-	
-	
-	
-    
 **Note:**
  To start apache web server
  To start posgres server
+ 
+ 
+ 
+ [epinux/docker-staks](../README.md)

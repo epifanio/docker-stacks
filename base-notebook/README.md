@@ -69,3 +69,5 @@ c.DockerSpawner.extra_create_kwargs.update({
 	'command': '/usr/local/bin/start-singleuser.sh'
 })
 ```
+
+[epinux/docker-staks](../README.md)

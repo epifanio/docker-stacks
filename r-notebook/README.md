@@ -37,3 +37,7 @@
     
 **Note:**
  To run R-studio server
+ 
+ 
+ 
+[epinux/docker-staks](../README.md)

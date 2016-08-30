@@ -17,4 +17,8 @@ Small image for working in the notebook and installing your own libraries
 * essential build toolkit
 * python 2/3 development files 
 * pandoc 
-* full texlive environmnet
+* full latex environmnet
+
+
+
+[epinux/docker-staks](../README.md)

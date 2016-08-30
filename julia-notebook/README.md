@@ -17,3 +17,6 @@
     * [HDF5]()
     * [DataFrames]()
     * [QuantEcon]()
+    
+    
+[epinux/docker-staks](../README.md)
