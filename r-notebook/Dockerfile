@@ -17,7 +17,6 @@ RUN apt-get clean && apt-get update && \
     gfortran \
     libblas-dev \
     liblapack-dev  \
-    netcdf-bin \
     libzmq3-dev \
     python-rpy2 \
     r-recommended \

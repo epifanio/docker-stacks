@@ -13,6 +13,7 @@ RUN apt-get clean && apt-get update && apt-get install -yq --no-install-recommen
     vim \
     jed \
     emacs \
+    nano \
     build-essential \
     python-dev \
     unzip \

@@ -6,7 +6,6 @@ USER root
 
 RUN apt-get clean && apt-get update && \
     apt-get install -y --no-install-recommends \
-    nano \
     netcdf-bin \
     grass-core \
     gdal-bin \

@@ -9,7 +9,7 @@ USER root
 RUN apt-get clean && apt-get update && \
     apt-get install -y --no-install-recommends libav-tools \
     dvipng ghostscript python3-matplotlib python3-pandas \
-    python3-seaborn cython3 \
+    cython3 \
     python3-patsy python3-h5py python3-numexpr python3-skimage-lib \
     libyaml-dev python3-setuptools python-setuptools npm \
     python-pip python-zmq python-matplotlib python-pandas \

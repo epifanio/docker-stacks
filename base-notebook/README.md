@@ -1,14 +1,13 @@
-![docker pulls](https://img.shields.io/docker/pulls/jupyter/base-notebook.svg) ![docker stars](https://img.shields.io/docker/stars/jupyter/base-notebook.svg)
+![docker pulls](https://img.shields.io/docker/pulls/epinux/base-notebook.svg) ![docker stars](https://img.shields.io/docker/stars/epinux/base-notebook.svg)
 
 # Base Jupyter Notebook Stack
 
 ## This fork differs from the original repository [jupyter/docker-stacks](https://github.com/jupyter/docker-stacks) for:
 * upgrade the OS to debian SID
-* replace the conda python/R environment with the system python (2/3) and R
-* Additional kernels (C, Octave, Bash)
-* Additional noteb ook js extensions
-* Additional software libraries for geospatial data analysys (GDAL, GRASS, OSIM, PostGIS) and other geo-oriented python and R librries
-
+* replace the conda python environment with the system python (2/3) 
+* **Username** ```epinux``` **PASSWORD** ```epinux``` (root acces as default)
+* python3 development environment
+* ssh server
 
 Small base image for defining your own stack
 
@@ -22,6 +21,7 @@ Small base image for defining your own stack
 * A [start-singleuser.sh](../minimal-notebook/start-singleuser.sh) script for use as an alternate command that runs a single-user instance of the Notebook server, as required by [JupyterHub](#JupyterHub)
 * Options for HTTPS, password auth, and passwordless `sudo`
 
+
 ## Basic Use
 
 The following command starts a container with the Notebook server listening for HTTP connections on port 8888 without authentication configured.
@@ -32,7 +32,7 @@ docker run -d -p 8888:8888 epinux/base-notebook
 
 ## Notebook Options
 
-You can pass [Jupyter command line options](http://jupyter.readthedocs.org/en/latest/config.html#command-line-arguments) through the [`start-notebook.sh` command](https://github.com/jupyter/docker-stacks/blob/master/minimal-notebook/start-notebook.sh#L15) when launching the container. For example, to set the base URL of the notebook server you might do the following:
+You can pass [Jupyter command line options](http://jupyter.readthedocs.org/en/latest/config.html#command-line-arguments) through the [`start-notebook.sh` command](https://github.com/epifanio/docker-stacks/blob/master/base-notebook/start-notebook.sh#L17) when launching the container. For example, to set the base URL of the notebook server you might do the following:
 
 ```
 docker run -d -p 8888:8888 epinux/minimal-notebook start-notebook.sh --NotebookApp.base_url=/some/path
