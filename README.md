@@ -23,26 +23,25 @@ If this is your first time using Docker or any of the Jupyter projects, do the f
 
 ## A visual overview of stacks
 
-In this fork of the [jupyter/docker-stacks]() the following docker images are built in a hierarchical sequence: 
+In this fork of the [jupyter/docker-stacks](https://github.com/jupyter/docker-stacks) the following docker images are built in a hierarchical sequence: 
 
-* [base-notebook]()
-* [minimal-notebook]()
-* [scipy-notebook]()
-* [r-notebook]()
-* [julia-notebook]()
-* [extended-notebook]()
-* [db-notebook]()
-* [gis-notebook]()
+* [base-notebook](base-notebook/README.md)
+* [minimal-notebook](minimal-notebook/README.md)
+* [scipy-notebook](scipy-notebook/README.md)
+* [julia-notebook](julia-notebook/README.md)
+* [extended-notebook](extended-notebook/README.md)
+* [db-notebook](db-notebook/README.md)
+* [gis-notebook](gis-notebook/README.md)
+* [r-notebook](r-notebook/README.md)
+* [mb-notebook](mb-notebook/README.md)
 
 Those images are based on debian SID and make use of the system python (2+3) and R
 
 ## Stacks, Tags, Versioning, and Progress
 
-Starting with [git commit SHA 9bd33dcc8688](https://github.com/jupyter/docker-stacks/tree/9bd33dcc8688):
-
 * Every folder here on GitHub has an equivalent `epinux/<stack name>` on Docker Hub.
 * The `latest` tag in each Docker Hub repository tracks the `master` branch `HEAD` reference on GitHub.
-* Any 12-character image tag on Docker Hub refers to a git commit SHA here on GitHub. See the [Docker build history wiki page](https://github.com/jupyter/docker-stacks/wiki/Docker-build-history) for a table of build details.
+* Any 12-character image tag on Docker Hub refers to a git commit SHA here on GitHub. 
 * Stack contents (e.g., new library versions) will be updated upon request via PRs against this project.
 * Users looking to remain on older builds should refer to specific git SHA tagged images in their work, not `latest`.
 * For legacy reasons, there are two additional tags named `3.2` and `4.0` on Docker Hub which point to images prior to our versioning scheme switch.
@@ -72,7 +71,7 @@ git reset --hard origin/master
 make release-all
 ```
 
-When `make release-all` successfully pushes the last of its images to Docker Hub (currently `jupyter/all-spark-notebook`), Docker Hub invokes [the webhook](https://github.com/jupyter/docker-stacks/blob/master/internal/docker-stacks-webhook/) which updates the [Docker build history](https://github.com/jupyter/docker-stacks/wiki/Docker-build-history) wiki page.
+When `make release-all` successfully pushes the last of its images to Docker Hub (currently `epinux/md-notebook`), Docker Hub invokes [the webhook](https://github.com/jupyter/docker-stacks/blob/master/internal/docker-stacks-webhook/) which updates the [Docker build history](https://github.com/jupyter/docker-stacks/wiki/Docker-build-history) wiki page.
 
 **When there's a security fix in the Debian base image, do the following in place of the last command:**
 
