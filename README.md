@@ -1,9 +1,14 @@
-# docker-stacks
+# epinux/docker-stacks
 
 [![Build Status](https://travis-ci.org/jupyter/docker-stacks.svg?branch=master)](https://travis-ci.org/jupyter/docker-stacks)
 [![Join the chat at https://gitter.im/jupyter/jupyter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jupyter/jupyter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Opinionated stacks of ready-to-run Jupyter applications in Docker.
+A fork of [jupyter/docker-stacks](https://github.com/jupyter/docker-stacks) Opinionated stacks of ready-to-run Jupyter applications in Docker.
+
+**This fork differs from the original repository for:**
+* upgrade the OS to debian SID
+* replace the conda python environment with the system python (2/3) 
+* addition of main Geospatial Free and Open Source Software
 
 ## Quick Start
 
@@ -20,6 +25,9 @@ If this is your first time using Docker or any of the Jupyter projects, do the f
 1. [Install Docker](https://docs.docker.com/installation/) on your host of choice.
 2. Open the README in one of the folders in this git repository.
 3. Follow the README for that stack.
+
+**Note for windows users:** 
+The latest set of stacks (R, md) require an up-to-dated version of docker which is available only for windows >=10.
 
 ## A visual overview of stacks
 
