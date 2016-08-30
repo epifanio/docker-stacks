@@ -8,3 +8,5 @@ cd ..
 jupyter-nbextension install toc
 jupyter-nbextension enable toc/toc
 rm -rf toc
+jupyter nbextension install https://rawgithub.com/minrk/ipython_extensions/master/nbextensions/gist.js
+jupyter nbextension enable gist

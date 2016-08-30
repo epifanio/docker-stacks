@@ -2,25 +2,24 @@
 
 # Base Jupyter Notebook Stack
 
-## This fork differs from the original repository [jupyter/docker-stacks](https://github.com/jupyter/docker-stacks) for:
-* upgrade the OS to debian SID
-* replace the conda python environment with the system python (2/3) 
-* **Username** ```epinux``` **PASSWORD** ```epinux``` (root acces as default)
-* python3 development environment
-* ssh server
-
 Small base image for defining your own stack
+
+**Note:**
+This fork differs from the original repository [jupyter/docker-stacks](https://github.com/jupyter/docker-stacks) for:
+* Operating System upgraded to debian SID
+* Make use of the system python (2/3) 
 
 ## What it Gives You
 
 * Minimally-functional Jupyter Notebook 4.2.x (e.g., no pandoc for document conversion)
 * Kernel based on Python 3.x
 * No preinstalled scientific computing packages
-* Privileged user `epinux` (uid=1000, configurable, see options) in group `users` (gid=100) with ownership over `/home/epinux` 
+* Privileged user `epinux` (uid=1000, configurable, see options) in group `users` (gid=100) with ownership over `/home/epinux` and **PASSWORD** ```epinux``` (root acces as default)
 * [tini](https://github.com/krallin/tini) as the container entrypoint and [start-notebook.sh](./start-notebook.sh) as the default command
 * A [start-singleuser.sh](../minimal-notebook/start-singleuser.sh) script for use as an alternate command that runs a single-user instance of the Notebook server, as required by [JupyterHub](#JupyterHub)
 * Options for HTTPS, password auth, and passwordless `sudo`
-
+* python3 development environment
+* ssh server
 
 ## Basic Use
 

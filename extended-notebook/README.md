@@ -7,15 +7,16 @@
 * Starting point: [julia-notebook](../julia-notebook/README.md) plus:
 *  Pre-installed Jupyter Notebook extensions:
 
-    * [pythreejs]()
-    * [bqplot]()
-    * [RISE]()
-    * [jupyterlab]()
-    * [TOC]()
+    * [pythreejs](https://github.com/jovyan/pythreejs)
+    * [bqplot](https://github.com/bloomberg/bqplot)
+    * [RISE](https://github.com/damianavila/RISE)
+    * [jupyterlab](https://github.com/jupyter/jupyterlab)
+    * [TOC, gist](https://github.com/minrk/ipython_extensions)
+    
 
 * Pre-installed Jupyter Notebook kernels:
 
-    * [bash]()
+    * [bash](https://github.com/takluyver/bash_kernel)
     * [octave]()
     * [C]()
     * [fortran]()

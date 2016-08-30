@@ -6,7 +6,7 @@
 
 * Starting point: [extended-notebook](../extended-notebook/README.md) plus:
 * apache2 web server
-* Postgresql 9.5 with [postgis]() spatial extension
+* Postgresql 9.5 with [postgis](http://postgis.net/) spatial extension
 * Pre-installed python libraries:
     * sqlalchemy
     * psycopg2
