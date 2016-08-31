@@ -53,6 +53,10 @@ CMD ["start-notebook.sh"]
 
 EXPOSE 22
 
+ADD scripts/start_services.sh /usr/local/bin/start_services.sh
+ADD scripts/stop_services.sh /usr/local/bin/stop_services.sh
+RUN RUN chmod a+x /usr/local/bin/start_services.sh /usr/local/bin/stop_services.sh
+
 # Add local files as late as possible to avoid cache busting
 COPY start-notebook.sh /usr/local/bin/
 COPY start-singleuser.sh /usr/local/bin/
