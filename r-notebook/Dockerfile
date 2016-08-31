@@ -41,8 +41,8 @@ ADD install_rstudio-server.sh /tmp/install_rstudio-server.sh
 RUN sh /tmp/install_rstudio-server.sh
 #RUN ln -s /usr/lib/x86_64-linux-gnu/libcrypto.so.1.0.2 /usr/lib/x86_64-linux-gnu/libcrypto.so.1.0.0
 
-RUN echo"nohup rstudio-server start >> rstudio.log &" >> /usr/local/bin/start_services.sh
-RUN echo"nohup rstudio-server stop >> rstudio.log &" >> /usr/local/bin/stop_services.sh
+RUN echo "nohup rstudio-server start >> rstudio.log &" >> /usr/local/bin/start_services.sh
+RUN echo "nohup rstudio-server stop >> rstudio.log &" >> /usr/local/bin/stop_services.sh
 #
 #ADD installR-Spatial.r /tmp/installR-Spatial.r
 #RUN Rscript /tmp/installR-Spatial.r
