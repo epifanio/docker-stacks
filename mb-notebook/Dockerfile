@@ -33,4 +33,9 @@ ENV LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 
 RUN apt-get clean && apt-get update && \
-    apt-get install -y --no-install-recommends grass-gui qgis
+    apt-get install -y --no-install-recommends \
+    grass-gui \
+    qgis \
+    qgis-plugin-grass \
+    qgis-plugin-grass-common \
+    qgis-provider-grass
