@@ -46,11 +46,11 @@ RUN echo "listen_addresses='*'" >> /etc/postgresql/9.5/main/postgresql.conf
 
 EXPOSE 5432
 
-echo "nohup /etc/init.d/postgresql start >> postgres.log &" >> /usr/local/bin/start_services.sh
-echo "nohup /etc/init.d/postgresql stop >> postgres.log &" >> /usr/local/bin/stop_services.sh
+RUN echo "nohup /etc/init.d/postgresql start >> postgres.log &" >> /usr/local/bin/start_services.sh
+RUN echo "nohup /etc/init.d/postgresql stop >> postgres.log &" >> /usr/local/bin/stop_services.sh
 
-echo "nohup /etc/init.d/apache2 start >> apache.log &" >> /usr/local/bin/start_services.sh
-echo "nohup /etc/init.d/apache2 stop >> apache.log &" >> /usr/local/bin/stop_services.sh
+RUN echo "nohup /etc/init.d/apache2 start >> apache.log &" >> /usr/local/bin/start_services.sh
+RUN echo "nohup /etc/init.d/apache2 stop >> apache.log &" >> /usr/local/bin/stop_services.sh
 
 #USER postgres
 # Set the default command to run when starting the container
