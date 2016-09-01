@@ -5,6 +5,10 @@ Add a description for each notebook with at lease:
 - pip 2/3
 - rpackages
 
-Add tutorial
+
+- let be the pg cluster db in a separate shared volume
+
+- Add tutorial
+- integrate gsoc notebooks
 
 clean from dev, tmp and cache

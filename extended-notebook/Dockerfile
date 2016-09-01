@@ -23,8 +23,8 @@ RUN cd jupyter-c-kernel && python3 setup.py install && \
     cp -R resources/ /usr/local/lib/python3.5/dist-packages/jupyter_c_kernel-1.0.0-py3.5.egg/ &&  \
     jupyter-kernelspec install c_spec && cd ../ && rm -rf jupyter-c-kernel
 
-#RUN git clone https://github.com/ipython-contrib/IPython-notebook-extensions && cd IPython-notebook-extensions && \
-#    python3 setup.py install && cd ../ && rm -rf IPython-notebook-extensions
+RUN git clone https://github.com/ipython-contrib/IPython-notebook-extensions && cd IPython-notebook-extensions && pip3 install -e jupyter_contrib_nbextensions && jupyter contrib nbextension install
+
 
 RUN git clone https://github.com/jdfreder/iforth && cd iforth && python3 setup.py install && python setup.py install && \
     cd ../ && rm -rf iforth
