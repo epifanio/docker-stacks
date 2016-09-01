@@ -45,5 +45,6 @@ RUN jupyter serverextension enable --py jupyterlab --sys-prefix
 
 
 USER epinux
+RUN jupyter contrib nbextension install --user
 
 RUN echo "alias python=python3" >> /home/epinux/.bashrc
