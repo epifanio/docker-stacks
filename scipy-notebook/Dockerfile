@@ -33,6 +33,8 @@ RUN apt-get clean && apt-get update && \
     libedit-dev \
     python3-tk
 
+RUN apt-get clean && apt-get update && \
+    apt-get install -y --no-install-recommends libhdf5-dev
 RUN pip3 install --default-timeout=100 scikit-learn \
     sympy \
     statsmodels \
