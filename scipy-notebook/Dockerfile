@@ -34,7 +34,8 @@ RUN apt-get clean && apt-get update && \
     python3-tk
 
 RUN apt-get clean && apt-get update && \
-    apt-get install -y --no-install-recommends libhdf5-dev
+    apt-get install -y --no-install-recommends python3-tables python-tables
+    
 RUN pip3 install --default-timeout=100 scikit-learn \
     sympy \
     statsmodels \
@@ -54,8 +55,7 @@ RUN pip3 install --default-timeout=100 scikit-learn \
     castra \
     dora \
     prettypandas \
-    arrow \
-    tables
+    arrow
 
 
 RUN ln -s /usr/bin/llvm-config-3.8 /usr/bin/llvm-config
