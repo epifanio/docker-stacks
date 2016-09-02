@@ -12,3 +12,6 @@ Add a description for each notebook with at lease:
 - integrate gsoc notebooks
 
 clean from dev, tmp and cache
+
+fix those tuikets:
+https://trac.osgeo.org/osgeo/ticket/1700#comment:6
