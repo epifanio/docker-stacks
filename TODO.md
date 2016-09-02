@@ -12,3 +12,10 @@ Add a description for each notebook with at lease:
 - integrate gsoc notebooks
 
 clean from dev, tmp and cache
+
+
+add:
+Tensorflow and moviepy
+
+https://github.com/dschep/ntfy
+https://github.com/david-gpu/srez
