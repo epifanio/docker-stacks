@@ -77,10 +77,12 @@ RUN pip install --default-timeout=100 ipython \
     cloudpickle \
     dill \
     qrcode \
-    bqplot
+    bqplot \
+    ipympl
 
 RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix
 RUN jupyter nbextension enable --py bqplot --sys-prefix
+RUN jupyter nbextension enable --py --sys-prefix ipympl
 
 
 RUN pip install --default-timeout=100 bokeh && pip3 install --default-timeout=100 bokeh

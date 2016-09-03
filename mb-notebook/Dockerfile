@@ -38,4 +38,4 @@ RUN apt-get clean && apt-get update && \
     qgis \
     qgis-plugin-grass \
     qgis-plugin-grass-common \
-    qgis-provider-grass
+    qgis-provider-grass htop

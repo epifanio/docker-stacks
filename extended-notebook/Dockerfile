@@ -44,7 +44,8 @@ RUN jupyter serverextension enable --py jupyterlab --sys-prefix
 
 
 USER epinux
-RUN git clone https://github.com/ipython-contrib/IPython-notebook-extensions && cd IPython-notebook-extensions && pip3 install -e . #&& jupyter_contrib_nbextensions #&& jupyter contrib nbextension install
+
+
 
 #RUN jupyter contrib nbextension install --user
 
