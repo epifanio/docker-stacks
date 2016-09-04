@@ -39,3 +39,6 @@ RUN apt-get clean && apt-get update && \
     qgis-plugin-grass \
     qgis-plugin-grass-common \
     qgis-provider-grass htop
+
+RUN Rscript -e "install.packages('rgl', repos = 'http://cran.us.r-project.org')"
+USER epinux

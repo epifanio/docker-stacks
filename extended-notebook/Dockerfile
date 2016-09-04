@@ -42,8 +42,12 @@ RUN jupyter-nbextension enable rise --py --sys-prefix
 RUN pip2 install jupyterlab && pip3 install jupyterlab
 RUN jupyter serverextension enable --py jupyterlab --sys-prefix
 
+RUN chmod -R 777 /home/epinux
+RUN chown -R epinux /home/epinux
 
 USER epinux
+RUN jupyter nbextensions_configurator enable --user
+RUN jupyter contrib nbextension install --user
 
 
 

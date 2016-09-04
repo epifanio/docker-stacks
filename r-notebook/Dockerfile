@@ -24,8 +24,7 @@ RUN apt-get clean && apt-get update && \
     libcurl4-openssl-dev \
     gdebi \
     libgdal-dev \
-    libssl1* \
-    r-cran-rgl
+    libssl1* #r-cran-rgl
 
 # Calls R script to do install with feedback to stdout
 
@@ -58,4 +57,6 @@ EXPOSE 8787
 
 RUN rm -rf /tmp/*
 
+RUN Rscript -e "install.packages('rgl', repos = 'http://cran.us.r-project.org')"
 USER epinux
+RUN Rscript -e "IRkernel::installspec()"

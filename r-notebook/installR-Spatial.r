@@ -17,4 +17,6 @@ install.packages('rgrass7',
 
 install.packages("rpostgis", repos = 'http://cran.us.r-project.org')
 
+install.packages("rgl", repos = 'http://cran.us.r-project.org')
+
 q()
