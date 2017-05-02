@@ -13,7 +13,7 @@ RUN apt-get clean && apt-get update && \
     dans-gdal-scripts \
     python-gdal \
     python3-gdal \
-    libgdal20-2.1.1-grass \
+    libgdal20-2.1.2-grass \
     librasterlite2-1 \
     libspatialite7 \
     spatialite-bin \
@@ -77,15 +77,15 @@ RUN git clone https://github.com/rmenegaux/bayeshack
 
 USER epinux
 
-ENV PATH /usr/lib/grass70/bin:$PATH
+ENV PATH /usr/lib/grass72/bin:$PATH
 ENV GRASS_PNG_AUTO_WRITE TRUE
 ENV GRASS_PNG_COMPRESSION 9
 ENV GRASS_TRANSPARENT TRUE
 ENV GRASS_TRUECOLOR TRUE
-ENV GISBASE /usr/lib/grass70
+ENV GISBASE /usr/lib/grass72
 ENV GISDBASE /home/epinux/grassdata
 ENV GISRC /home/epinux/.grass7/rc
-ENV LD_LIBRARY_PATH /usr/lib/grass70/lib/
+ENV LD_LIBRARY_PATH /usr/lib/grass72/lib/
 
 RUN mkdir /home/epinux/.grass7
 ADD GRASS/rc /home/epinux/.grass7/rc

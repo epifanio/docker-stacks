@@ -24,7 +24,7 @@ RUN apt-get clean && apt-get update && \
     libcurl4-openssl-dev \
     gdebi \
     libgdal-dev \
-    libssl1* #r-cran-rgl
+    libssl1* r-cran-rgl
 
 # Calls R script to do install with feedback to stdout
 
@@ -32,8 +32,8 @@ RUN mkdir -p /usr/local/share/jupyter/kernels
 
 # uncomment to build from src
 
-#ADD installRpackages.r /tmp/installRpackages.r
-#RUN Rscript /tmp/installRpackages.r
+ADD installRpackages.r /tmp/installRpackages.r
+RUN Rscript /tmp/installRpackages.r
 
 # R-studio-server
 ADD install_rstudio-server.sh /tmp/install_rstudio-server.sh
@@ -43,12 +43,12 @@ RUN sh /tmp/install_rstudio-server.sh
 RUN echo "nohup rstudio-server start >> rstudio.log &" >> /usr/local/bin/start_services.sh
 RUN echo "nohup rstudio-server stop >> rstudio.log &" >> /usr/local/bin/stop_services.sh
 #
-#ADD installR-Spatial.r /tmp/installR-Spatial.r
-#RUN Rscript /tmp/installR-Spatial.r
+ADD installR-Spatial_minimal.r /tmp/installR-Spatial_minimal.r
+RUN Rscript /tmp/installR-Spatial_minimal.r
 # pkg built on 20th Aug. 2016
 
-RUN wget --progress=dot -P /tmp/ http://epinux.com/debs/R/rpackages_0.1.0_amd64.deb
-RUN dpkg -i /tmp/rpackages_0.1.0_amd64.deb
+#RUN wget --progress=dot -P /tmp/ http://epinux.com/debs/R/rpackages_0.1.0_amd64.deb
+#RUN dpkg -i /tmp/rpackages_0.1.0_amd64.deb
 
 ADD rpostgis.r /tmp/rpostgis.r
 RUN Rscript /tmp/rpostgis.r
@@ -57,6 +57,11 @@ EXPOSE 8787
 
 RUN rm -rf /tmp/*
 
-RUN Rscript -e "install.packages('rgl', repos = 'http://cran.us.r-project.org')"
+#RUN Rscript -e "install.packages('rgl', repos = 'http://cran.us.r-project.org')"
+RUN chown -R root:root /home/epinux/work/grassdata
+ADD installRgrass7.r /tmp/installRgrass7.r
+RUN Rscript /tmp/installRgrass7.r
+RUN chown -R epinux /home/epinux/work/grassdata
 USER epinux
 RUN Rscript -e "IRkernel::installspec()"
+

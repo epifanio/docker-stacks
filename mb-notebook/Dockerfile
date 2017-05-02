@@ -12,7 +12,6 @@ RUN apt-get clean && apt-get update && \
     gmt gmt-gshhg-full \
     gmt-gshhg-high \
     gmt-gshhg-low \
-    gmt-tutorial \
     libgmt5 \
     gmt-dcw \
     gmt-examples \

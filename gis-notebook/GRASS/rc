@@ -4,4 +4,4 @@ GRASS_VERBOSE: '-1'
 GUI: text
 DEBUG: 0
 MAPSET: PERMANENT
-GISBASE: /usr/lib/grass70
+GISBASE: /usr/lib/grass72

@@ -12,8 +12,8 @@ ALL_STACKS:=base-notebook \
 	extended-notebook \
 	db-notebook \
 	gis-notebook \
-	r-notebook \
-	mb-notebook
+	r-notebook #\
+	#mb-notebook
 
 ALL_IMAGES:=$(ALL_STACKS)
 

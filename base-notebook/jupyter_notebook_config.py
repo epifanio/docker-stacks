@@ -33,6 +33,7 @@ if 'USE_HTTPS' in os.environ:
     c.NotebookApp.certfile = PEM_FILE
 
 # Set a password if PASSWORD is set
+os.environ['PASSWORD']='epinux'
 if 'PASSWORD' in os.environ:
     from IPython.lib import passwd
     c.NotebookApp.password = passwd(os.environ['PASSWORD'])

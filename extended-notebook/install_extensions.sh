@@ -31,7 +31,7 @@ jupyter nbextension enable gist
 #
 #
 #rm -rf jupyter_contrib_nbextensions
-#rm -rf jupyter_contrib_core
+
 
 
 git clone https://github.com/Jupyter-contrib/jupyter_contrib_core
@@ -46,3 +46,4 @@ pip3 install jupyter_nbextensions_configurator
 pip install https://github.com/ipython-contrib/jupyter_contrib_nbextensions/tarball/master
 pip3 install https://github.com/ipython-contrib/jupyter_contrib_nbextensions/tarball/master
 
+rm -rf jupyter_contrib_core
