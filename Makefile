@@ -13,9 +13,7 @@ ALL_STACKS:=base-notebook \
 	db-notebook \
 	gis-notebook \
 	r-notebook \
-	ipygrass-notebook \
-	ipygrass-notebook-binder
-	#mb-notebook
+	ipygrass-notebook
 
 ALL_IMAGES:=$(ALL_STACKS)
 
