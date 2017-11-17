@@ -1,0 +1,2 @@
+deb 	http://cdn.debian.net/debian/ sid main non-free contrib
+deb-src http://cdn.debian.net/debian/ sid main non-free contrib
